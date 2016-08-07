@@ -1,9 +1,43 @@
 .container {font-family: 'Oswald', sans-serif;
-            text-align: right;
-
-
-
-
+            text-align: center;
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            width: 150px;
+            background-color: darkgrey;
+            border-style: solid;
+            border-color: black;
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 20px;
 }
-          
-            
+
+
+
+.athlete {margin: 3px;
+          background-color: black; 
+          color: white;
+          padding: 10px;
+          float: left;
+          margin-top: 10px;
+         
+}           
+
+.athlete:hover {background-color: white;
+                color: black;
+                text-emphasis: bold;
+}
+
+
+
+#findGif {margin-right: 10px;}
+
+
+#findGif:hover {background-color: black;
+         color: white;
+          text-shadow: 1px 1px lightgrey;}
+
+
+#clear:hover {background-color: black;
+         color: white;
+          text-shadow: 1px 1px lightgrey;}
