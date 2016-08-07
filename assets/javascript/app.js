@@ -23,22 +23,49 @@ function renderButtons(){
 
 $('#findGif').on('click', function(){
 
-		// This line of code will grab the input from the textbox
+		
 		var athlete = $('#gif-input').val().trim();
 
-		// The movie from the textbox is then added to our array
 		athletes.push(athlete);
 		
-		// Our array then runs which handles the processing of our movie array
 		renderButtons();
 
-		// We have this line so that users can hit "enter" instead of clicking on ht button and it won't move to the next page
 		return false;
     
 	});
 
-renderButtons();
 
+
+
+$('button').on('click', function() {
+        var name = $(this).data('name');
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=dc6zaTOxFJmzC&limit=1";
+
+        $.ajax({
+                url: queryURL,
+                method: 'GET'
+            })
+            .done(function(response) {
+                var results = response.data;
+
+                for (var i = 0; i < results.length; i++) {
+                    var gifDiv = $('<div class="item">')
+
+                    var rating = results[i].rating;
+
+                    var p = $('<p>').text("Rating: " + rating);
+
+                    var athleteImage = $('<img>');
+                    athleteImage.attr('src', results[i].images.fixed_height.url);
+
+                    gifDiv.append(p)
+                    gifDiv.append(athleteImage)
+
+                    $('#gifLoad').prepend(gifDiv);
+                }
+                
+            });
+    });
 
     
-  
+ 
