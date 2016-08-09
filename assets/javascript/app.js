@@ -12,8 +12,9 @@ function renderButtons(){
 		    var a = $('<button>') 
 		    a.addClass('athlete'); 
 		    a.attr('data-name', athletes[i]);
-		    a.text(athletes[i]); 
-		    $('#buttonsArea').append(a); 
+		    a.text(athletes[i]);
+            a.attr("type", "button");
+		    $('#buttonsArea').append(a).fadeIn(); 
             
 		}
 	}
@@ -25,12 +26,14 @@ $('#findGif').on('click', function(){
 
 		
 		var athlete = $('#gif-input').val().trim();
-
+       
 		athletes.push(athlete);
 		
 		renderButtons();
-
+        
 		return false;
+        
+        
     
 	});
 
@@ -40,14 +43,14 @@ $('#findGif').on('click', function(){
 $('button').on('click', function() {
         var name = $(this).data('name');
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=dc6zaTOxFJmzC&limit=1";
+    
+      
 
-        $.ajax({
-                url: queryURL,
-                method: 'GET'
-            })
+        $.ajax({url: queryURL, method: 'GET'})
+            
             .done(function(response) {
                 var results = response.data;
-
+console.log(response);
                 for (var i = 0; i < results.length; i++) {
                     var gifDiv = $('<div class="item">')
 
@@ -63,8 +66,9 @@ $('button').on('click', function() {
 
                     $('#gifLoad').prepend(gifDiv);
                 }
-                
+               
             });
+       
     });
 
     

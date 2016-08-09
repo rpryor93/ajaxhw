@@ -1,3 +1,5 @@
+
+
 .container {font-family: 'Oswald', sans-serif;
             text-align: center;
             position: fixed;
@@ -5,21 +7,25 @@
             left: 50px;
             width: 150px;
             background-color: darkgrey;
-            border-style: solid;
-            border-color: black;
+            border-style: groove;
+            border-color: deepskyblue;
+            border-width: 5px;
             box-sizing: border-box;
             margin: 0px;
             padding: 20px;
 }
 
-
+h1 {text-shadow: 3px 1px deepskyblue;}
 
 .athlete {margin: 3px;
           background-color: black; 
           color: white;
-          padding: 10px;
+          padding: 5px;
           float: left;
           margin-top: 10px;
+          border-style: groove;
+          border-color: deepskyblue;
+          border-width: 2px;
          
 }           
 
@@ -30,14 +36,23 @@
 
 
 
-#findGif {margin-right: 10px;}
+#findGif {margin-right: 10px;
+          padding: 10px;}
 
 
-#findGif:hover {background-color: black;
+#findGif:hover {background-color: deepskyblue;
          color: white;
-          text-shadow: 1px 1px lightgrey;}
+          text-shadow: 1px 1px 1px black;}
 
+#clear {padding: 10px;}
 
-#clear:hover {background-color: black;
+#clear:hover {background-color: deepskyblue;
          color: white;
-          text-shadow: 1px 1px lightgrey;}
+          text-shadow: 1px 1px 1px black;
+         }
+
+#gif-input {border-style: groove;
+            border color: black;
+            border-width: 5px;}
+
+label {margin-right: 10px;}
