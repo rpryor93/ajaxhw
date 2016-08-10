@@ -56,3 +56,11 @@ h1 {text-shadow: 3px 1px deepskyblue;}
             border-width: 5px;}
 
 label {margin-right: 10px;}
+
+#gifLoad {position: relative;
+          top: 350px;
+}
+
+img {float: left;
+     margin-left: 20px;
+     

@@ -1,5 +1,5 @@
 
-var athletes = [];
+var athletes = ['Brian Dawkins', 'Wayne Gretzky', 'Micheal Jordan', 'Donovan McNabb', 'Sammy Sosa', 'Barry Sanders', 'Vince Carter', 'Walter Peyton', 'Calvin Johnson', 'Barry Bonds', 'Julio Jones', 'Suzuki Ichiro', 'Emmitt Smith', 'Roger Staubach', 'Odell Beckham', 'Mark McGwire'];
 
 
 
@@ -19,7 +19,7 @@ function renderButtons(){
 		}
 	}
 
-
+$(document).ready(renderButtons);
 
 
 $('#findGif').on('click', function(){
@@ -40,9 +40,9 @@ $('#findGif').on('click', function(){
 
 
 
-$('button').on('click', function() {
+$(document).on('click', 'button', function() {
         var name = $(this).data('name');
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=dc6zaTOxFJmzC&limit=1";
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=dc6zaTOxFJmzC&limit=5";
     
       
 
@@ -50,7 +50,7 @@ $('button').on('click', function() {
             
             .done(function(response) {
                 var results = response.data;
-console.log(response);
+
                 for (var i = 0; i < results.length; i++) {
                     var gifDiv = $('<div class="item">')
 
@@ -70,6 +70,13 @@ console.log(response);
             });
        
     });
+
+$(document).on('click', '#clear', function() {
+    $('#gifLoad').empty();
+    $('#gif-input').val('');
+   
+    
+});
 
     
  
