@@ -43,7 +43,7 @@ $('#findGif').on('click', function(){
 
 $(document).on('click', 'button', function() {
         var name = $(this).data('name');
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=dc6zaTOxFJmzC&limit=15";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=dc6zaTOxFJmzC&limit=100";
     
       
 
@@ -59,7 +59,8 @@ $(document).on('click', 'button', function() {
                     var url = results[i].url;
 
                     var p = $('<p>').text("Rating: " + rating);
-                    var u = $('<p>').text("URL: " + url);
+                    var u = $('<a>').text(url);
+                    u.attr('href', url);
                     
                     var athleteImage = $('<img>');
                     athleteImage.attr('src', results[i].images.fixed_height.url);
@@ -75,12 +76,12 @@ $(document).on('click', 'button', function() {
        
     });
 
-$(document).on('click', '#clear', function() {
-    $('#gifLoad').empty();
-    $('#gif-input').val('');
-   
+$(document).on('dblclick', '#clear', function() {
+    $('#gifLoad').empty(); 
     
 });
+    
+
 
     
  
